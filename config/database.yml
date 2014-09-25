@@ -1,24 +1,16 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: blog
+  password:
 
 development:
-  adapter: postgresql
-  encoding: unicode
+  <<: *defaults
   database: blog_development
-  pool: 5
-  username: blog
-  password:
-
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *defaults
   database: blog_test
-  pool: 5
-  username: blog
-  password:
-
 production:
-  adapter: postgresql
-  encoding: unicode
+  <<: *defaults
   database: blog_production
-  pool: 5
-  username: blog
-  password:
