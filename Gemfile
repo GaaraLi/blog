@@ -15,6 +15,12 @@ gem "paranoia", "~> 2.0" # https://github.com/radar/paranoia
 #heroku
 gem 'rails_12factor', group: :production
 
+#markdown
+gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
+gem 'coderay'
+
 group :doc do
   gem 'sdoc', require: false
 end

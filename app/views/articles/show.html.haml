@@ -1,0 +1,23 @@
+.article_area
+  %h1
+    =@article.title
+  %p
+    =mark_down(@article.content)
+.link_area
+  =link_to 'Edit', edit_article_path(@article)
+  =link_to 'Back', articles_path
+  =link_to '首页', root_path
+
+:css
+  .article_area{
+    border-style:outset;
+    border-width: 1px;
+    margin-left:5%;
+    margin-right:5%;
+    padding: 10px;
+  }
+
+  .link_area{
+    text-align: right;
+    margin-right:5%;
+  }

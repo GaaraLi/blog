@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name:'admin', password:'realwol', except:[:show]
 
   # GET /articles
   # GET /articles.json
