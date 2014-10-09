@@ -2,8 +2,13 @@ class PageController < ApplicationController
   def homepage
   end
 
+  def change_subtitle
+  	session[:sub_title] = '=>' + params[:sub_title]
+  	redirect_to root_path
+  end
+
   def cv
-  	render file: "#{Rails.root}/public/cv.html", layout:false
+  	render file: "#{Rails.root}/public/cv.html", layout:default
   end
 
   def error_404
