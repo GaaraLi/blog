@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#init tags
+if Tag.count == 0
+  puts 'init tags, please wait...'
+  Tag.create([{name: 'Rails'},{name:'Life'},{name:'Angular JS'}])
+  puts 'tags created succesfully. '
+else
+	puts 'you have tags initialized.'
+end

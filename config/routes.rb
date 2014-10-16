@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  resources :tags
+
   resources :articles
 
   root "page#homepage"

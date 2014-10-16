@@ -1,6 +1,7 @@
 .article_area
   %h1
     =@article.title
+  = '-'+@article.tag.name
   %p
     =mark_down(@article.content)
 .link_area

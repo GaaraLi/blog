@@ -2,6 +2,8 @@ class Article < ActiveRecord::Base
 	acts_as_paranoid
 	paginates_per 1
 
+	belongs_to :tag
+
 	# before_save :test1, :test2
 
 	# private

@@ -1,2 +1,4 @@
 %hr
+  -Tag.all.each do |t|
+    =link_to t.name, '#'
   =link_to '简历', cv_path if cv_out?
