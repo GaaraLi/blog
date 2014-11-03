@@ -9,7 +9,7 @@
 #init tags
 if Tag.count == 0
   puts 'init tags, please wait...'
-  Tag.create([{name: 'Rails'},{name:'Life'},{name:'Angular JS'}])
+  Tag.create([{name: 'Rails'},{name:'Life'},{name:'Angular JS'},{name:'Other'}])
   puts 'tags created succesfully. '
 else
 	puts 'you have tags initialized.'

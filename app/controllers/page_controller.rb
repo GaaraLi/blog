@@ -3,7 +3,9 @@ class PageController < ApplicationController
   end
 
   def change_subtitle
-  	session[:sub_title] = '=>' + params[:sub_title]
+    if params[:sub_title]
+  	  session[:sub_title] = '=>' + params[:sub_title]
+    end
   	redirect_to root_path
   end
 

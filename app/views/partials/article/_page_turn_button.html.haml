@@ -1,0 +1,20 @@
+.left_turn_btn
+  =link_to '<', article_path(@article.previous_article), style:'text-decoration:none;'
+.right_turn_btn
+  =link_to '>', article_path(@article.next_article), style:'text-decoration:none;'
+
+:css
+  .left_turn_btn{
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    font-size:40px;
+    cursor:pointer;
+  }
+  .right_turn_btn{
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    font-size:40px;
+    cursor:pointer;
+  }

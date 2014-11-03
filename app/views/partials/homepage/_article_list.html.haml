@@ -1,0 +1,7 @@
+.article_list_margin{style:'margin-left:20px;'}
+  -if @articles.count > 0
+    -@articles.each do |article|
+      %h3
+        =link_to article.title, article_path(article.id)
+  -else
+    本标签下无文章

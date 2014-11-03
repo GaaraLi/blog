@@ -1,0 +1,10 @@
+%p#notice
+  =notice
+
+%p
+  %strong
+    = @tag.name
+
+=render 'partials/homepage/article_list', locals:{articles: @articles}
+
+=link_to 'Back', root_path
