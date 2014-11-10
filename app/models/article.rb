@@ -43,10 +43,16 @@ class Article < ActiveRecord::Base
 		    end
 		end
 
-		if Article.find(current_id)
-			Article.find(current_id)
-		else
-			get_article(direction, current_id)
-		end
+        begin
+        	Article.find(current_id)
+        rescue ActiveRecord::RecordNotFound
+        	get_article(direction, current_id)
+        end
+
+		# if Article.find(current_id)
+		# 	Article.find(current_id)
+		# else
+		# 	get_article(direction, current_id)
+		# end
 	end
 end
