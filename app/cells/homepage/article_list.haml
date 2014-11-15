@@ -2,6 +2,6 @@
   -if @articles.count > 0
     -@articles.each do |article|
       %h3
-        =link_to article.title, article_path(article.id)
+        =link_to article.title, article_path(article.id), style:'text-decoration:none;'
   -else
     目前无文章
