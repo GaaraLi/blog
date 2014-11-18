@@ -8,8 +8,10 @@
     = '-'+ @article.tag.name 
   -else
     = '- Others'
+  %p{style:'font-size:12px;'}
+    －文章中在某些突兀的地方出现的“（1） （2）”这类字符是笔者觉得需要做些许解释地方，解释内容将会在文章结尾以此给出，特标记，无任何语义且会缺省，乱序。
   %hr
-  %p
+  %p{style:'font-size:'}
     =mark_down(@article.content)
 .link_area
   =link_to '首页', root_path
@@ -26,4 +28,8 @@
   .link_area{
     text-align: right;
     margin-right:5%;
+  }
+
+  p{
+    font-size:14px;
   }
