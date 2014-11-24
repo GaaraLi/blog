@@ -13,21 +13,16 @@ class Article < ActiveRecord::Base
 	end
 
 	private
+	#TODO: opt the if .. else ..
 	def get_article(direction, article_id)
 		start_id = Article.first.id
 		end_id = Article.last.id
 		if direction
-			if article_id == start_id
-			  current_id = end_id
-			else
-			  current_id = article_id.to_i - 1
-			end
+	      current_id = end_id
+	      current_id = article_id.to_i - 1 if article_id != start_id
 		else
-			if article_id == end_id
-			  current_id = start_id
-		    else
-			  current_id = article_id.to_i + 1
-		    end
+		  current_id = start_id
+		  current_id = article_id.to_i + 1 if article_id != end_id
 		end
 
         begin
