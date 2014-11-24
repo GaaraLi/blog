@@ -4,19 +4,6 @@ class Article < ActiveRecord::Base
 
 	belongs_to :tag
 
-	# before_save :test1, :test2
-
-	# private
-	# def test1
-	# 	puts '-------------'
-	# 	puts 1
-	# end
-
-	# def test2
-	# 	puts '=============='
-	# 	puts 2
-	# end
-
 	def previous_article
 		get_article(true,self.id)
 	end
@@ -48,11 +35,5 @@ class Article < ActiveRecord::Base
         rescue ActiveRecord::RecordNotFound
         	get_article(direction, current_id)
         end
-
-		# if Article.find(current_id)
-		# 	Article.find(current_id)
-		# else
-		# 	get_article(direction, current_id)
-		# end
 	end
 end
