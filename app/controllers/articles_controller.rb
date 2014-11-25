@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     page = params[:page] || 1
-    @articles = Article.published.page(page)
+    @articles = Article.all.page(page)
   end
 
   def show
