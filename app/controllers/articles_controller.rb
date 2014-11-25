@@ -30,7 +30,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    binding.pry
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
