@@ -23,6 +23,10 @@
     <%= f.label :tag_id %><br>
     <%= f.collection_select :tag_id, Tag.all, "id", "name"%>
   </div>
+  <div class="field">
+    <%= f.label :publish_switch %>
+    <%= f.check_box :publish_switch %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

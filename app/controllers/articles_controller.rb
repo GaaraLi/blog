@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     page = params[:page] || 1
-    @articles = Article.all.page(page)
+    @articles = Article.published.page(page)
   end
 
   def show
@@ -30,6 +30,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    binding.pry
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
@@ -49,11 +50,15 @@ class ArticlesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
-      @article = Article.find(params[:id])
+      begin
+        @article = Article.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        render file: "#{Rails.root}/public/404.html", status:404, layout:false
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :tag_id)
+      params.require(:article).permit(:title, :content, :tag_id, :publish_switch)
     end
 end

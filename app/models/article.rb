@@ -4,6 +4,8 @@ class Article < ActiveRecord::Base
 
 	belongs_to :tag
 
+	scope :published, -> { where( publish_switch:true) }
+
 	def previous_article
 		get_article(true,self.id)
 	end
@@ -12,8 +14,13 @@ class Article < ActiveRecord::Base
 		get_article(false,self.id)
 	end
 
+	def published?
+		self.publish_switch
+	end
+
 	private
 	#TODO: opt the if .. else ..
+	# set max time for search article
 	def get_article(direction, article_id)
 		start_id = Article.first.id
 		end_id = Article.last.id
@@ -25,10 +32,12 @@ class Article < ActiveRecord::Base
 		  current_id = article_id.to_i + 1 if article_id != end_id
 		end
 
-        begin
-        	Article.find(current_id)
-        rescue ActiveRecord::RecordNotFound
-        	get_article(direction, current_id)
-        end
+    begin
+      article = Article.find(current_id)
+      article = get_article(direction, current_id) unless article.published?
+    rescue
+    	article = get_article(direction, current_id)
+    end
+    article
 	end
 end

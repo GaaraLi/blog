@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141016133306) do
+ActiveRecord::Schema.define(version: 20141124144815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141016133306) do
     t.datetime "updated_at"
     t.datetime "deleted_at"
     t.string   "tag_id"
+    t.boolean  "publish_switch", default: false
   end
 
   create_table "tags", force: true do |t|
