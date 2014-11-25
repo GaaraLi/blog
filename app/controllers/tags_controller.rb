@@ -7,7 +7,7 @@ class TagsController < ApplicationController
 
   def show
     if @tag
-      @articles = @tag.articles
+      @articles = @tag.articles.published
     end
   end
 
