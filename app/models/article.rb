@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
 	acts_as_paranoid
-	paginates_per 1
+	paginates_per 15
 
 	belongs_to :tag
 
