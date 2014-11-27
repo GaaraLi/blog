@@ -9,12 +9,12 @@ Blog::Application.routes.draw do
     resources :articles
   end
 
-  #api
+  # api
   get 'subtitle' => "page#change_subtitle"
 
-  #static
+  # static
   get "cv" => "page#CV"
 
-  #errors
+  # errors
   match '*', via: :all, to:'page#error_404'
 end
