@@ -11,6 +11,6 @@
         %td
           =tag.name
         %td
-          =link_to 'delete', tag, html:{:method=>'delete'}, data:{format:'Delte tag ?'}
+          =link_to 'delete', tag, method: :delete, data: { confirm: 'Delete tag ?'}
 
 =link_to 'New Tag', new_tag_path

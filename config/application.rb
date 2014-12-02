@@ -1,9 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-# require 'pry'
-# Load middleware requirement
-require_relative '../lib/response_timer'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -22,8 +19,5 @@ module Blog
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
-    # Add middleware for response timer
-    config.middleware.use "ResponseTimer"
   end
 end
