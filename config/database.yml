@@ -1,9 +1,10 @@
 defaults: &defaults
-  adapter: postgresql
+  adapter: mysql2
   encoding: unicode
   pool: 5
-  username: blog
-  password:
+  username: root
+  password: 
+  encoding: utf8
 
 development:
   <<: *defaults
