@@ -28,7 +28,7 @@ class ResponseTimer
   def each(&block)
     # Add the last "if" will case the css and js not be loaded 
     # block.call("<!-- #{@message}: #{@stop - @start} -->\n") if @headers["Content-Type"].include? "text/html"
-    block.call("<!-- #{@message}: #{@stop - @start} -->\n")
+    block.call("<!--- #{@message}: #{@stop - @start} --->\n")
     @response.each(&block)
   end
 end
