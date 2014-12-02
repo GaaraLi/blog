@@ -19,7 +19,6 @@ class TagsController < ApplicationController
   end
 
   def create
-    binding.pry
     @tag = Tag.new(tag_params)
 
     respond_to do |format|
