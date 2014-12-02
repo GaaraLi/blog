@@ -19,6 +19,7 @@ class TagsController < ApplicationController
   end
 
   def create
+    binding.pry
     @tag = Tag.new(tag_params)
 
     respond_to do |format|
@@ -55,6 +56,6 @@ class TagsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tag_params
-      params.require(:tag).permit(:name, :deleted_at)
+      params.require(:tag).permit(:name)
     end
 end
