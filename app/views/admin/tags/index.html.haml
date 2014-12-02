@@ -1,1 +1,16 @@
-all tags here
+%h1 Tags
+%hr
+%table
+  %thead
+    %tr
+      %th Name
+      %th Delete
+  %tbody
+    -@tags.each do |tag|
+      %tr
+        %td
+          =tag.name
+        %td
+          =link_to 'delete', tag, html:{:method=>'delete'}, data:{format:'Delte tag ?'}
+
+=link_to 'New Tag', new_tag_path

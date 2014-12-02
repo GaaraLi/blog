@@ -9,7 +9,13 @@ class ArticlesController < ApplicationController
 
   def show
     if @article.published?
-      @article 
+      respond_to do |format|
+        format.html
+        format.json { render :json => @article }
+        format.text { render :text => @article }
+        # format.xml { render :xml=> @article} conflict with response_timer case 
+        # the title can not be convert into xml format
+      end
     else
       render file: "#{Rails.root}/public/404.html", status:404, layout:false
     end
@@ -24,7 +30,6 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
