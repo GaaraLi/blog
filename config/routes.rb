@@ -1,6 +1,8 @@
 Blog::Application.routes.draw do
   resources :tags
-  resources :articles
+  resources :articles do
+    get :preview, on: :member
+  end
 
   root "page#homepage"
 

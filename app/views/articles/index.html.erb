@@ -17,6 +17,7 @@
         <td><%= article.title %></td>
         <td><%= article.published? %></td>
         <td><%= link_to 'Show', article %></td>
+        <td><%= link_to 'preview', preview_article_path(article) %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -17,8 +17,13 @@ class ArticlesController < ApplicationController
         # the title can not be convert into xml format
       end
     else
-      render file: "#{Rails.root}/public/404.html", status:404, layout:false
+      redirect_to articles_path
     end
+  end
+
+  def preview
+    @article = Article.find(params[:id])
+    render 'show'
   end
 
   def new
