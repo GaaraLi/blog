@@ -1,0 +1,23 @@
+%nav.navbar-fixed-top{ style:'height:60px; background-color:green;'}
+  %h1{style:'text-align:center;'}
+    Realwol
+%body{style:'margin-top:70px; width:80%; margin-left:10%;'}
+  .hot_article{style:'height:500px; width:100%; background-color: yellow;'}
+    #moving_tag.button-wrap
+      rails
+      =link_to '', tag_path(1), class: 'button button-circle glow',style:"background:url('"+asset_path("2.jpg")+"');"
+
+:javascript
+  setInterval('random_running()', 1000);
+
+  function random_running(){
+    var top = $('#moving_tag').offset().top;
+    var left = $('#moving_tag').offset().left;
+    var offset = 30;
+    var new_left = offset + parseInt(left);
+    var new_top = offset + parseInt(top);
+    $('#moving_tag').animate({
+      "margin-left": (offset+parseInt(left))+'px',
+      "margin-top": (offset+parseInt(top))+'px',
+    },1000)
+  }

@@ -12,6 +12,7 @@ gem 'haml'
 gem 'cells'
 gem "paranoia", "~> 2.0" # https://github.com/radar/paranoia
 gem 'kaminari'
+# gem 'bootstrap-sass', '~> 3.3.1'
 
 #heroku
 gem 'rails_12factor', group: :production

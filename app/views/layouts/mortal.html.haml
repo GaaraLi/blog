@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title Blog
+    =stylesheet_link_tag 'application', media: 'all', "data-turbolinks-track"=> true
+    =stylesheet_link_tag 'css/bootstrap.min'
+    =stylesheet_link_tag 'buttons'
+    =stylesheet_link_tag 'main'
+    =stylesheet_link_tag 'css/bootstrap-responsive.min'
+    =javascript_include_tag 'application', "data-trubolinks-track"=> true
+    =javascript_include_tag 'js/bootstrap.min'
+    =javascript_include_tag 'buttons'
+    =csrf_meta_tags
+    =favicon_link_tag 'favicon.ico'
+  %body
+    =yield

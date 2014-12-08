@@ -3,7 +3,7 @@ defaults: &defaults
   encoding: unicode
   pool: 5
   username: root
-  password: realwol
+  password: 
   encoding: utf8
 
 development:

@@ -1,9 +1,0 @@
-Searching 214 files for "binding.pry"
-
-/Users/Leo/work/rails/projects/blog/app/controllers/tags_controller.rb:
-   20  
-   21    def create
-   23      @tag = Tag.new(tag_params)
-   24  
-
-1 match in 1 file
