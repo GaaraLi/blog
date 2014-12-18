@@ -1,5 +1,8 @@
 class PageController < ApplicationController
   def homepage
+    puts '============='
+    puts 'in controller'
+    puts '============='
   end
 
   def mortal

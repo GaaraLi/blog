@@ -6,8 +6,13 @@ class Article < ActiveRecord::Base
 
 	scope :published, -> { where( publish_switch:true) }
 
+  # Not fit so well with old test
+  # searchable do
+  #   text :title
+  # end
+
 	def previous_article
-		get_article(true,self.id)
+    get_article(true,self.id)
 	end
 
 	def next_article
@@ -19,25 +24,30 @@ class Article < ActiveRecord::Base
 	end
 
 	private
-	#TODO: opt the if .. else ..
-	# set max time for search article
+	# Set max time for search article
 	def get_article(direction, article_id)
-		start_id = Article.first.id
-		end_id = Article.last.id
-		if direction
-	      current_id = end_id
-	      current_id = article_id.to_i - 1 if article_id != start_id
-		else
-		  current_id = start_id
-		  current_id = article_id.to_i + 1 if article_id != end_id
-		end
-
+    current_id = get_current_id(direction, article_id)
     begin
       article = Article.find(current_id)
-      article = get_article(direction, current_id) unless article.published?
+      raise 'Current article not published error' unless article.published?
     rescue
     	article = get_article(direction, current_id)
     end
     article
 	end
+
+  def get_current_id( direction, article_id)
+    start_id = Article.first.id
+    end_id = Article.last.id
+    id = direction ? article_id -1 : article_id + 1
+    
+    case id
+    when (start_id - 1) then
+      id = end_id
+    when (end_id + 1) then
+      id = start_id
+    else
+    end
+    id
+  end
 end

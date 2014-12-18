@@ -3,7 +3,7 @@ class Tag < ActiveRecord::Base
 	has_many :articles
 
   def self.article_published
-    self.all.delete_if{|tag| tag.articles.published.count < 1 }
+    all.delete_if{|tag| tag.articles.published.count < 1 }
   end
 
 end

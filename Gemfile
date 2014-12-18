@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 gem 'rails', '4.0.0'
 gem 'mysql2'
@@ -23,6 +23,11 @@ gem 'albino'
 gem 'nokogiri'
 gem 'coderay'
 
+#solr
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'progress_bar'
+
 group :doc do
   gem 'sdoc', require: false
 end
@@ -33,6 +38,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails', '1.4.0'
   gem 'capybara'
+  gem 'colorize'
   # unfixed issue
   # gem 'spork-rails' 
 end
