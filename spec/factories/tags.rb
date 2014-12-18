@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :tag do
-    name "MyString"
-    deleted_at "2014-10-16 21:32:36"
+    name "MyTag"
+    # deleted_at "2014-10-16 21:32:36"
   end
 end
