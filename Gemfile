@@ -28,6 +28,8 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'progress_bar'
 
+gem 'thin'
+
 group :doc do
   gem 'sdoc', require: false
 end
