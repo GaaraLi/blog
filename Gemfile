@@ -29,6 +29,7 @@ gem 'sunspot_solr'
 gem 'progress_bar'
 
 gem 'thin'
+gem 'mina'
 
 group :doc do
   gem 'sdoc', require: false

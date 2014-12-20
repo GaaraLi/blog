@@ -16,3 +16,4 @@
 /tmp
 Gemfile.lock
 /config/thin.yml
+/config/database.yml
