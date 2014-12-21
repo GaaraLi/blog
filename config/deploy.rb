@@ -15,6 +15,7 @@ set :domain, '115.28.32.95'
 set :deploy_to, '/root/work/web/blog'
 set :repository, 'git@github.com:GaaraLi/blog.git'
 set :branch, 'master'
+set :rvm_path,"/usr/local/rvm/bin/rvm"
 # Make sure ssh didn't go for another enter
 set :term_mode, nil
 # For system-wide RVM install.
@@ -38,7 +39,7 @@ task :environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use[ruby-1.9.3-p125@default]'
+  invoke :'rvm:use[ruby-2.0.0-p598@default]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
