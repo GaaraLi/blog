@@ -12,7 +12,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
 set :user, 'root'
 set :domain, '115.28.32.95'
-set :deploy_to, '/root/work/web/blog'
+set :deploy_to, '/root/work/web/realwol.com'
 set :repository, 'git@github.com:GaaraLi/blog.git'
 set :branch, 'master'
 set :rvm_path,"/usr/local/rvm/bin/rvm"
@@ -54,6 +54,8 @@ task :setup => :environment do
 
   queue! %[touch "#{deploy_to}/#{shared_path}/config/database.yml"]
   queue  %[echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/database.yml'."]
+
+  # queue! %[mkdir -p "#{deploy_to}/current"]
 end
 
 desc "Deploys the current version to the server."
@@ -75,6 +77,13 @@ task :deploy => :environment do
   end
 end
 
+%w{start stop restart}.each do |command|
+  desc "#{command} thin"
+  task command => :environment do
+    # queue! "#{deploy_to}／config/thin.yml"
+    queue! "thin #{command} -C #{deploy_to}/shared/config/thin.yml"
+  end
+end
 # For help in making your deploy script, see the Mina documentation:
 #
 #  - http://nadarei.co/mina

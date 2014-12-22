@@ -1,6 +1,6 @@
 defaults: &defaults
   adapter: mysql2
-  encoding: unicode
+  # encoding: unicode
   pool: 5
   username: root
   password:
