@@ -9,10 +9,13 @@
   -else
     = '- Others'
   %p{style:'font-size:12px;'}
-    －文章中在某些突兀的地方出现的“（1） （2）”这类字符是笔者觉得需要做些许解释地方，解释内容将会在文章结尾以此给出，特标记，无任何语义且会缺省，乱序。
+    / －文章中在某些突兀的地方出现的“（1） （2）”这类字符是笔者觉得需要做些许解释地方，解释内容将会在文章结尾以此给出，特标记，无任何语义且会缺省，乱序。
   %hr
   %p{style:'font-size:'}
-    =mark_down @article.content
+    -a = Time.now
+    -cache(@article) do
+      =mark_down @article.content
+    = Time.now - a if params[:t]
 .link_area
   =link_to '首页', root_path
 

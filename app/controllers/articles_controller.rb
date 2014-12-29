@@ -13,8 +13,6 @@ class ArticlesController < ApplicationController
         format.html
         format.json { render :json => @article }
         format.text { render :text => @article }
-        # format.xml { render :xml=> @article} conflict with response_timer case 
-        # the title can not be convert into xml format
       end
     else
       redirect_to articles_path
