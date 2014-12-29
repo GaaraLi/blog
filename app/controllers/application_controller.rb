@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
     def block_code(code, language)
       language = "ruby" if language.blank?
       # Fix first line missing table
-      code = code.insert(0,"    ")
+      # Ps: only in development, OK with production mode
+      code = code.insert(0,"    ") unless Rails.env.production?
       # Fix last line odd enter line
       code.chomp!
       CodeRay.scan(code, language).div(:tab_width=>2)
