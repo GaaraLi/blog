@@ -3,25 +3,32 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :mark_down
+  helper_method [:mark_down]
 
+  # Highlight code with Pygments
+  class HTMLwithCoderay < Redcarpet::Render::HTML
+    def block_code(code, language)
+      language = "ruby" if language.blank?
+      # Fix first line missing table
+      code = code.insert(0,"    ")
+      # Fix last line odd enter line
+      code.chomp!
+      CodeRay.scan(code, language).div(:tab_width=>2)
+    end
+  end
+
+  protected
   def mark_down(text)
-	  mark = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-                                   autolink:true,
-                                   tables:true,
-                                   space_after:true,
-                                   no_intra_emphasis:true,
-                                   hard_wrap:true,
-                                   strikethrough:true)
-	  mark.render(text).html_safe
+    options = {
+      :autolink => true,
+      :no_intra_emphasis => true,
+      # :fenced_code_blocks => true,
+      :lax_html_blocks => true,
+      :strikethrough => true,
+      :superscript => true,
+      :tables => true,
+      :hightlights => true
+    }
+	  Redcarpet::Markdown.new(HTMLwithCoderay, options).render(text).html_safe
   end
-
-  def syntax_highlighter( html)
-  	doc= Nokogiri::HTML( html)
-  	doc.search("//pre[@lang]").each do |pre|
-  		pre.replace Albino.colorize( pre.text.rstrip, pre[:lang])
-  	end
-  	doc.to_s
-  end
-
 end

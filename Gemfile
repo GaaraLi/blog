@@ -19,9 +19,9 @@ gem 'rails_12factor', group: :production
 
 #markdown
 gem 'redcarpet'
-gem 'albino'
-gem 'nokogiri'
 gem 'coderay'
+
+gem 'nokogiri'
 
 #solr
 gem 'sunspot_rails'
