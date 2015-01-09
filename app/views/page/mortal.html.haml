@@ -55,51 +55,54 @@
   %hr
   %table{style:"width:80%; margin-left:10%;"}
     %tr{style:"background-color:"}
-      %td{style:"width:130px;"}
-        =image_tag('rails.jpg')
+      %td{}
+        =image_tag('rails.jpg',style:"width:130px;")
       %td{colspan:"3"}
         %p{style:"font-size:14px;"}
           &nbsp&nbsp&nbsp&nbsp使用Ruby on Rails到现在三年有余，理解 MCV 和 Convention Over Configuration，欣赏gem来定制自己想要的东西的方式，感谢rake，rack和middleware做的所有，也赞叹ActiveRecord，ActionPack，ActiveSupport美妙的实现方式。当然大大小小的坑也是踩了无数。不过在强忍着阅读Rails源代码的过程中，着实收获颇丰。而且个人的笔记也记录在blog中，希望能帮助到自己和其他人。
     %tr{style:"margin-top:10px;"}
       %td{style:"width:130px;"}
-        =image_tag('ruby.jpg')
+        =image_tag('ruby.jpg',style:"width:130px;")
       %td{colspan:"3"}
         %p{style:"font-size:14px;"}
           &nbsp&nbsp&nbsp&nbsp跟多数人的顺序一样，先Rails后Ruby；不过俗话说得好，好饭不怕晚。接触Ruby不久之后，就慕名前去阅读《Ruby元编程》，终于在七八遍之后，对其中的知识也可以在自己的项目中运用了。接下来在不断阅读开源代码的过程中，也陆陆续续的读了好几篇ruby的入门教材，去重选精的读，收获也很大。
     %tr
-      %td
+      %td{colspan:"5"}
         %hr
     %tr{style:"padding-top:20px;height:50px;"}
-      %td{colspan:'4', style:"font-size:40px;"}
+      %td{colspan:'4', style:"font-size:35px;"}
         有项目经验的技术
     %tr
+      %td{colspan:"5"}
+        %br
+    %tr
       %td
-        =image_tag('nginx.jpg', alt:'nginx')
+        =image_tag('nginx.jpg', alt:'nginx', style:"width:170px;")
       %td
-        =image_tag('mina.png')
+        =image_tag('mina.png', style:"width:170px;")
       %td
-        =image_tag('thin.jpg')
+        =image_tag('thin.jpg', style:"width:170px;")
       %td
-        %p{style:"font-size:25px;"}
+        %p{style:"font-size:25px;padding-left:40px; font-weight:solid;"}
           UNICORN
     %tr
       %td
-        =image_tag('angular.jpg')
+        =image_tag('angular.jpg', style:"width:170px;")
       %td
-        =image_tag('ember.jpg')
+        =image_tag('ember.jpg', style:"width:170px;")
       %td
-        =image_tag('git.jpg')
+        =image_tag('git.jpg', style:"width:170px;")
       %td
-        =image_tag('jquery.png')
+        =image_tag('jquery.png', style:"width:170px;")
     %tr
       %td
-        =image_tag('bootstrap.jpg')
+        =image_tag('bootstrap.jpg', style:"width:170px;")
       %td
-        =image_tag('mysql.jpg')
+        =image_tag('mysql.jpg', style:"width:170px;")
       %td
-        =image_tag('mongodb.png')
+        =image_tag('mongodb.png', style:"width:170px;")
       %td
-        =image_tag('redis.png')
+        =image_tag('redis.png', style:"width:170px;")
 
 .bottom_div{style:"height:300px;background:#2e3234;"}
   .logo_img{style:"margin-left:48%;"}
