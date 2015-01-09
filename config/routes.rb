@@ -15,9 +15,9 @@ Blog::Application.routes.draw do
   get 'subtitle' => "page#change_subtitle"
   get 'ab_test' => 'page#ab_test'
   get 'mortal' => 'page#mortal'
+  get "cv" => "page#cv"
 
   # static
-  get "cv" => "page#CV"
   get "cv-en" => "page#CV_en"
 
   # errors

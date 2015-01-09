@@ -1,3 +1,4 @@
 =render 'partials/homepage/header'
 =render_cell(:homepage, :article_list)
-=render 'partials/homepage/footer'
+=cache 'footer', expires_in: 1.minutes do
+  =render 'partials/homepage/footer'

@@ -13,7 +13,7 @@
   %hr
   %p{style:'font-size:'}
     -a = Time.now
-    -cache(@article) do
+    -cache(@article, expires_in: 10.minutes) do
       =mark_down @article.content
     = Time.now - a if params[:t]
 .link_area

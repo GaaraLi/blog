@@ -19,7 +19,8 @@ class PageController < ApplicationController
   end
 
   def cv
-    render file: "#{Rails.root}/public/cv.html", layout:default
+    render layout:'mortal'
+    # render file: "#{Rails.root}/public/cv.html", layout:default
   end
 
   def CV_en

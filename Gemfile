@@ -31,6 +31,8 @@ gem 'progress_bar'
 gem 'thin'
 gem 'mina'
 
+gem 'dalli'
+
 group :doc do
   gem 'sdoc', require: false
 end

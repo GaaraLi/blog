@@ -1,4 +1,123 @@
-%nav.navbar-fixed-top{ style:'height:60px; background:none;'}
-  %h1{style:'text-align:center;'}
-    Realwol
-.header{style:"background:url('"+asset_path("2.jpg")+"'); height:500px;"}
+
+.header{style:"background:url('"+asset_path("head.jpg")+"'); height:400px;margin-top:0px;"}
+  %h1{style:'text-align:center; padding-top:150px;'}
+    I love
+    %font{style:'font-size:70px;'}
+      Ruby
+    and
+    %font{style:'font-size:70px;'}
+      Rails.
+  %h1{style:'text-align:center; margin-top:50px; margin-left:150px;'}
+    I need a
+    %font{style:'font-size:70px;'}
+      Job
+    now!
+.self_intro{style:'height:400px;text-align:center;'}
+  / %h2
+  /   %span.label.label-primary{style:"background-color:#CBA578; padding:10px 12px;"}
+  /     %font{style:"font-size:20px;"}
+  /       自我介绍
+  .intro_content{style:"text-align:left;width:80%; margin-left:10%; margin-top:50px;"}
+    %table
+      %tr
+        %td
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        %td.pad_td
+          从事Ruby on Rails三年有余，喜欢
+        %td
+          .thumbnial.round_pic{style:"background:url('"+asset_path("cl.jpg")+"');"}
+        %td.pad_td
+          崇拜
+        %td
+          .thumbnial.round_pic{style:"background:url('"+asset_path("rocket.jpg")+"');"}
+        %td.pad_td
+          佩服
+        %td
+          .thumbnial.round_pic{style:"background:url('"+asset_path("dhh.jpg")+"');"}
+    .hobbit{style:"color:rgb(85, 85, 85);"}
+      %h2{style:"text-align:center"}
+      %h2{style:"text-align:center; margin-top:50px;"}
+        %font{style:"font-size:18px"}
+          大学加入
+        校足球队
+      %h2{style:"text-align:center;"}
+        %font{style:"font-size:18px"}
+          有属于自己的
+        球杆
+      %h2{style:"text-align:center"}
+        %font{style:"font-size:18px"}
+          也在拜读
+        Rails
+        %font{style:"font-size:18px;"}
+          的
+        源代码
+.project_exp{style:'text-align:center;'}
+  %hr
+  %table{style:"width:80%; margin-left:10%;"}
+    %tr{style:"background-color:"}
+      %td{style:"width:130px;"}
+        =image_tag('rails.jpg')
+      %td{colspan:"3"}
+        %p{style:"font-size:14px;"}
+          &nbsp&nbsp&nbsp&nbsp使用Ruby on Rails到现在三年有余，理解 MCV 和 Convention Over Configuration，欣赏gem来定制自己想要的东西的方式，感谢rake，rack和middleware做的所有，也赞叹ActiveRecord，ActionPack，ActiveSupport美妙的实现方式。当然大大小小的坑也是踩了无数。不过在强忍着阅读Rails源代码的过程中，着实收获颇丰。而且个人的笔记也记录在blog中，希望能帮助到自己和其他人。
+    %tr{style:"margin-top:10px;"}
+      %td{style:"width:130px;"}
+        =image_tag('ruby.jpg')
+      %td{colspan:"3"}
+        %p{style:"font-size:14px;"}
+          &nbsp&nbsp&nbsp&nbsp跟多数人的顺序一样，先Rails后Ruby；不过俗话说得好，好饭不怕晚。接触Ruby不久之后，就慕名前去阅读《Ruby元编程》，终于在七八遍之后，对其中的知识也可以在自己的项目中运用了。接下来在不断阅读开源代码的过程中，也陆陆续续的读了好几篇ruby的入门教材，去重选精的读，收获也很大。
+    %tr
+      %td
+        %hr
+    %tr{style:"padding-top:20px;height:50px;"}
+      %td{colspan:'4', style:"font-size:40px;"}
+        有项目经验的技术
+    %tr
+      %td
+        =image_tag('nginx.jpg', alt:'nginx')
+      %td
+        =image_tag('mina.png')
+      %td
+        =image_tag('thin.jpg')
+      %td
+        %p{style:"font-size:25px;"}
+          UNICORN
+    %tr
+      %td
+        =image_tag('angular.jpg')
+      %td
+        =image_tag('ember.jpg')
+      %td
+        =image_tag('git.jpg')
+      %td
+        =image_tag('jquery.png')
+    %tr
+      %td
+        =image_tag('bootstrap.jpg')
+      %td
+        =image_tag('mysql.jpg')
+      %td
+        =image_tag('mongodb.png')
+      %td
+        =image_tag('redis.png')
+
+.bottom_div{style:"height:300px;background:#2e3234;"}
+  .logo_img{style:"margin-left:48%;"}
+    =image_tag('favicon.ico', style:"height:100px; width:50px;margin-top:90px;")
+  %p{style:"color:white;font-size:20px;text-align:center;"}
+    =link_to 'Blog', "http://115.28.32.95"
+    =link_to 'Email', "mailto:realwol@gamil.com"
+    =link_to 'Github', "https://github.com/GaaraLi"
+    =link_to 'Ruby-China', "https://ruby-china.org/realwol"
+
+:css
+  .round_pic{
+    width:140px;
+    height:140px;
+    border-radius:30px;
+    box-shadow: 2px 7px 10px 2px;
+  }
+  .pad_td{
+    padding: 15px;
+    padding-top: 100px;
+  }
