@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title Blog
+    =stylesheet_link_tag 'application', media:'all', 'data-turbolinks-track' => true
+    =javascript_include_tag 'application', 'data-turbolinks-track' => true
+    =csrf_meta_tags
+    =favicon_link_tag 'favicon.ico'
+  =render 'partials/homepage/header'
+  =yield
+  =cache 'footer', expires_in: 1.minutes do
+    =render 'partials/homepage/footer'
+

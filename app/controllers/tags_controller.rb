@@ -3,6 +3,9 @@ class TagsController < ApplicationController
 
   def index
     @tags = Tag.all
+    respond_to do |format|
+      format.json {render :json=> @tags}
+    end
   end
 
   def show
@@ -19,6 +22,7 @@ class TagsController < ApplicationController
   end
 
   def create
+    binding.pry
     @tag = Tag.new(tag_params)
 
     respond_to do |format|

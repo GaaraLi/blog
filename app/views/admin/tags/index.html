@@ -1,0 +1,29 @@
+<script type="text/x-handlebars" data-template-name="tags">
+  <table>
+    <tr>
+      <td>
+        name
+      </td>
+      <td>
+        options
+      </td>
+    </tr>
+    {{#each tag in model itemController="tag" }}
+      <tr>
+        <td>
+          {{tag.name}}
+        </td>
+        <td>
+          <button {{action "remove"}}> remove </button>
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+  {{input type='text' placeholder='new tag' value=newTag action="new" }}
+</script>
+<!--
+/ %script{:type=>"text/x-handlebars", "data-template-name"=>"tags"}
+/   {{#each tag in model}}
+/   %li
+/     {{tag.name}}
+/   {{/each}} -->

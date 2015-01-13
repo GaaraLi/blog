@@ -5,6 +5,11 @@ class ArticlesController < ApplicationController
   def index
     page = params[:page] || 1
     @articles = Article.all.order("publish_switch desc").page(page)
+    respond_to do |format|
+      format.html
+      format.json { render :json => @articles }
+      format.text { render :text => @articles }
+    end
   end
 
   def show

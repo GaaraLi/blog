@@ -11,20 +11,19 @@
   %p{style:'font-size:12px;'}
     / －文章中在某些突兀的地方出现的“（1） （2）”这类字符是笔者觉得需要做些许解释地方，解释内容将会在文章结尾以此给出，特标记，无任何语义且会缺省，乱序。
   %hr
-  %p{style:'font-size:'}
+  %p
     -a = Time.now
     -cache(@article, expires_in: 10.minutes) do
       =mark_down @article.content
     = Time.now - a if params[:t]
 .link_area
-  =link_to '首页', root_path
 
 :css
   .article_area{
     border-style:outset;
     border-width: 1px;
-    margin-left:5%;
-    margin-right:5%;
+    margin-left:15%;
+    margin-right:15%;
     padding: 10px;
   }
 

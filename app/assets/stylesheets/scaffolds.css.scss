@@ -13,13 +13,14 @@ p, ol, ul, td {
 }
 
 pre {
-  background-color: #eee;
+  background-color: #E8E8E5;
   padding: 10px;
   font-size: 11px;
 }
 
 a {
   color: #000;
+  text-decoration: none;
   &:visited {
     color: #666;
   }
