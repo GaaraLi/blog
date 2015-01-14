@@ -36,7 +36,7 @@ gem 'dalli'
 # Ember.js
 gem 'ember-rails'
 gem 'ember-source', '~> 1.9.0'
-gem 'emblem-rails'
+# gem 'emblem-rails'
 
 gem 'exception_notification'
 

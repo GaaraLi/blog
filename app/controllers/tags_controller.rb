@@ -2,9 +2,12 @@ class TagsController < ApplicationController
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
   def index
+    headers['Access-Control-Allow-Origin'] = '*'
+    request.format = :json
     @tags = Tag.all
     respond_to do |format|
-      format.json {render :json=> @tags}
+      format.html
+      format.json { render :json => @tags }
     end
   end
 
@@ -22,7 +25,6 @@ class TagsController < ApplicationController
   end
 
   def create
-    binding.pry
     @tag = Tag.new(tag_params)
 
     respond_to do |format|

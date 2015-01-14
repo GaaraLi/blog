@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124144815) do
+ActiveRecord::Schema.define(version: 20150114052833) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(version: 20141124144815) do
   create_table "tags", force: true do |t|
     t.string   "name"
     t.datetime "deleted_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "todos", force: true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
