@@ -1,5 +1,9 @@
 class PageController < ApplicationController
   def homepage
+    t = Time.now
+    # UserMailer.notice_email('email').deliver if params[:email]
+    EmailWorker.perform_async if params[:email]
+    @time = Time.now - t
   end
 
   def mortal

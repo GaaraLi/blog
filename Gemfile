@@ -33,6 +33,8 @@ gem 'mina'
 
 gem 'dalli'
 
+gem 'sidekiq'
+
 # Ember.js
 gem 'ember-rails'
 gem 'ember-source', '~> 1.9.0'
