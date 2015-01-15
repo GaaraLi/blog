@@ -36,12 +36,22 @@ Blog::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
   config.action_mailer.smtp_settings = {
-    :address => "smtp.qq.com",
-    :port => "587",
-    :domain => "qq.com",
-    :authentication => "realwol",
+    :address => "smtp.exmail.qq.com",
+    :port => 587,
+    :domain => "exmail.qq.com",
+    :authentication => "plain",
     :user_name => "361497565@qq.com",
-    :password => "realwol361497565",
-    :enable_starttls_auto => true
- }
+    :password => "realwol361497565"
+    # :enable_starttls_auto => true
+  }
+
+  # ExceptionNotification configuration
+  Blog::Application.config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "[Blog Error] ",
+    :sender_address => %{"361497565" <361497565@qq.com>},
+    :exception_recipients => %w{realwol@126.com}
+  }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 end
