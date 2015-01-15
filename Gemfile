@@ -33,7 +33,10 @@ gem 'mina'
 
 gem 'dalli'
 
+# Sidekiq dependency
 gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 # Ember.js
 gem 'ember-rails'

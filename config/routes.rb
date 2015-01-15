@@ -20,6 +20,9 @@ Blog::Application.routes.draw do
   # static
   get "cv-en" => "page#CV_en"
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: "/sidekiq"
+
   # errors
   match '*', via: :all, to:'page#error_404'
 end
