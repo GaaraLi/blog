@@ -21,7 +21,9 @@
 //= require blog
 
 // for more details see: http://emberjs.com/guides/application/
-window.Blog = Ember.Application.create()
+window.Blog = Ember.Application.create({
+  rootElement: '#ember_root'
+})
 Blog.ApplicationAdapter = DS.ActiveModelAdapter.extend({
   // LOG_ACTIVE_GENERATION: true
 })

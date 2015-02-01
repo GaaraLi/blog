@@ -1,5 +1,5 @@
 <div class='ember_area'>
-<script type="text/x-handlebars" data-template-name="tags">
+<script type="text/x-handlebars" id="components/admin-tags">
   <table>
     <tr>
       <td>
@@ -9,7 +9,7 @@
         options
       </td>
     </tr>
-    {{#each tag in model itemController="tag" }}
+    {{#each tag in tags itemController="tag" }}
       <tr>
         <td>
           {{tag.name}}
@@ -22,6 +22,50 @@
   </table>
   {{input type='text' placeholder='new tag' value=newTag action="new" }}
 </script>
+</div>
+<script type="text/x-handlebars" id="components/admin-articles">
+  <table>
+    <tr>
+      <td>
+        name
+      </td>
+      <td>
+        options
+      </td>
+    </tr>
+    {{#each article in model itemController="article" }}
+      <tr>
+        <td>
+          {{article.title}}
+        </td>
+        <td>
+          <button {{action "remove"}}> remove </button>
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+  {{input type='text' placeholder='new article' value=newTag action="new" }}
+</script>
+<script type="text/x-handlebars" data-template-name="tags">
+  ==========================
+  {{#each tag in model.tags}}
+    {{tag.name}}
+  {{/each}}
+  ==========================
+  {{#each article in model.articles}}
+    {{article.title}}
+    <br/>
+  {{/each}}
+</script>
+
+<script type="text/x-handlebars" data-template-name="articles">
+  {{#each tag in model}}
+    {{tag.title}}
+  {{/each}}
+</script>
+</div>
+
+<div id='ember_root'>
 </div>
 <!--
 / %script{:type=>"text/x-handlebars", "data-template-name"=>"tags"}
