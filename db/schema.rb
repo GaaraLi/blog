@@ -11,27 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114052833) do
+ActiveRecord::Schema.define(version: 20141124144815) do
 
-  create_table "articles", force: true do |t|
-    t.string   "title"
-    t.text     "content"
+  create_table "articles", force: :cascade do |t|
+    t.string   "title",          limit: 255
+    t.text     "content",        limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
-    t.string   "tag_id"
-    t.boolean  "publish_switch", default: false
+    t.string   "tag_id",         limit: 255
+    t.boolean  "publish_switch", limit: 1,     default: false
   end
 
-  create_table "tags", force: true do |t|
-    t.string   "name"
+  create_table "tags", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "deleted_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "todos", force: true do |t|
-    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

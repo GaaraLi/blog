@@ -23,7 +23,7 @@
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-    <%= paginate @articles %>
+    <%= will_paginate @articles %>
   </tbody>
 </table>
 

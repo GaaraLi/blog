@@ -1,6 +1,6 @@
 source 'https://ruby.taobao.org'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.2'
 gem 'mysql2'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -45,11 +45,13 @@ gem 'ember-source', '~> 1.9.0'
 
 gem 'exception_notification'
 
+gem 'will_paginate', '~> 3.0.5'
 group :doc do
   gem 'sdoc', require: false
 end
 
 group :development, :test do
+	gem 'spring'
   gem 'pry'
   gem 'pry-nav'
   gem 'rspec-rails', '~> 3.0.0'
