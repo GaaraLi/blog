@@ -3,6 +3,7 @@ class EmailWorker
   # Forbidden the re-sending of email
   sidekiq_options retry: false
 
+
   def perform
     UserMailer.notice_email('email').deliver
   end
